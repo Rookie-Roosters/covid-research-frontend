@@ -1,0 +1,46 @@
+<h1>Log in</h1>
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+  <span class="p-float-label">
+    <input
+      id="email-input"
+      type="text"
+      pInputText
+      [(ngModel)]="email"
+      name="email"
+      required
+      email
+      #emailvar="ngModel"
+    />
+    <label for="email-input">Email</label>
+    <div
+      [hidden]="emailvar.valid || emailvar.pristine"
+      class="alert alert-danger"
+    >
+      Please insert a valid email
+    </div>
+  </span>
+  <br />
+  <span class="p-float-label">
+    <p-password
+      inputId="password"
+      [(ngModel)]="password"
+      [feedback]="false"
+      name="password"
+      required
+      #passwordvar="ngModel"
+    ></p-password>
+    <label for="password">Password</label>
+    <div
+      [hidden]="passwordvar.valid || passwordvar.pristine"
+      class="alert alert-danger"
+    >
+      Please insert a valid email
+    </div>
+  </span>
+  <br />
+  <p-button
+    type="submit"
+    label="Sign in"
+    [disabled]="!loginForm.form.valid"
+  ></p-button>
+</form>
