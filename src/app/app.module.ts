@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { ButtonModule } from 'primeng/button'; //accordion and accordion tab
 import { InputTextModule } from 'primeng/inputtext';
@@ -17,7 +18,7 @@ import { ConfirmPasswordDirective } from './shared/confirm-password.directive';
 
 @NgModule({
   declarations: [AppComponent, WorldMapComponent, CovidChartsComponent, LoginComponent, SignupComponent, NameValidatorDirective, PasswordValidatorDirective, ConfirmPasswordDirective],
-  imports: [GoogleChartsModule,BrowserModule, AppRoutingModule, ButtonModule, FormsModule, InputTextModule, PasswordModule],
+  imports: [GoogleChartsModule, HttpClientModule, BrowserModule, AppRoutingModule, ButtonModule, FormsModule, InputTextModule, PasswordModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,27 +1,27 @@
 <h1>Sign up</h1>
 <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
 <span class="p-float-label">
-    <input id="first-name-input" type="text" pInputText [(ngModel)]="firstname" name="firstname" required validName maxlength="32" #firstnamevar="ngModel">
+    <input id="first-name-input" type="text" pInputText [(ngModel)]="user.firstName" name="firstname" required validName maxlength="32" #firstnamevar="ngModel">
     <label for="first-name-input">First name</label>
     <div *ngIf="firstnamevar.errors?.['emptyName'] && firstnamevar.dirty" class="alert alert-danger"> First name is required</div>
     <div *ngIf="firstnamevar.errors?.['invalidName']" class="alert alert-danger"> Please insert a valid name</div>
 </span>
 <br />
 <span class="p-float-label">
-    <input id="last-name-input" type="text" pInputText [(ngModel)]="lastname" name="lastname" required validName maxlength="32" #lastnamevar="ngModel">
+    <input id="last-name-input" type="text" pInputText [(ngModel)]="user.lastName" name="lastname" required validName maxlength="32" #lastnamevar="ngModel">
     <label for="last-name-input">Last name</label>
     <div *ngIf="lastnamevar.errors?.['emptyName'] && lastnamevar.dirty" class="alert alert-danger"> Last name is required</div>
     <div *ngIf="lastnamevar.errors?.['invalidName']" class="alert alert-danger"> Please insert a valid name</div>
 </span>
 <br />
 <span class="p-float-label">
-    <input id="email-input" type="email" pInputText [(ngModel)]="email" name="email" required email maxlength="64" #emailvar = "ngModel">
+    <input id="email-input" type="email" pInputText [(ngModel)]="user.email" name="email" required email maxlength="64" #emailvar = "ngModel">
     <label for="email-input">Email</label>
     <div [hidden]="emailvar.valid || emailvar.pristine" class="alert alert-danger"> Please insert a valid email</div>
 </span>
 <br />
 <span class="p-float-label">
-    <p-password inputId="password" [(ngModel)]="password" [feedback]="false" name="password" required validPassword maxlength="32" #passwordvar = "ngModel"></p-password>
+    <p-password inputId="password" [(ngModel)]="user.password" [feedback]="false" name="password" required validPassword maxlength="32" #passwordvar = "ngModel"></p-password>
     <label for="password">Password</label>
     <div *ngIf="passwordvar.errors?.['emptyPassword'] && passwordvar.dirty" class="alert alert-danger"> Please insert a password</div>
     <div *ngIf="passwordvar.errors?.['noLowercase']" class="alert alert-danger"> Password must have at least one lowercase character</div>
