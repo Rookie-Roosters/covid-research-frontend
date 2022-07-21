@@ -5,12 +5,12 @@ export function passwordValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
         if (control.value === '')
             return { emptyPassword: { value: control.value } }
-        if (!(/(?=.*[a-z])/.test(control.value)))
+        /*if (!(/(?=.*[a-z])/.test(control.value)))
             return { noLowercase: { value: control.value } }
         else if (!(/(?=.*[A-Z])/.test(control.value)))
             return { noUppercase: { value: control.value } }
         else if (!(/(?=.*\d)/.test(control.value)))
-            return { noNumeric: { value: control.value } }
+            return { noNumeric: { value: control.value } }*/
         return null;
     };
 }

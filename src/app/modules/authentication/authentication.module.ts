@@ -6,12 +6,19 @@ import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+import { NameValidatorDirective } from '@shared/directives';
+import { ConfirmPasswordDirective, PasswordValidatorDirective } from '@shared/directives';
+
 
 @NgModule({
-  declarations: [LogInPageComponent, SignUpPageComponent],
+  declarations: [LogInPageComponent, SignUpPageComponent, NameValidatorDirective, PasswordValidatorDirective, ConfirmPasswordDirective],
   imports: [
     CommonModule,
     ButtonModule,
+    MessageModule,
+    MessagesModule,
     FormsModule,
     InputTextModule,
     PasswordModule,
