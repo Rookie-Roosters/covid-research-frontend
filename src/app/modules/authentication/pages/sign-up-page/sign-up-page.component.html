@@ -1,11 +1,16 @@
 <h1>Sign up</h1>
+<p-messages [hidden]=" error === '' " severity="error">
+  <ng-template pTemplate>
+    {{error}}
+  </ng-template>
+</p-messages>
 <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
   <span class="p-float-label">
     <input
       id="first-name-input"
       type="text"
       pInputText
-      [(ngModel)]="firstname"
+      [(ngModel)]="user.firstName"
       name="firstname"
       required
       validName
@@ -32,7 +37,7 @@
       id="last-name-input"
       type="text"
       pInputText
-      [(ngModel)]="lastname"
+      [(ngModel)]="user.lastName"
       name="lastname"
       required
       validName
@@ -56,7 +61,7 @@
       id="email-input"
       type="email"
       pInputText
-      [(ngModel)]="email"
+      [(ngModel)]="user.email"
       name="email"
       required
       email
@@ -75,7 +80,7 @@
   <span class="p-float-label">
     <p-password
       inputId="password"
-      [(ngModel)]="password"
+      [(ngModel)]="user.password"
       [feedback]="false"
       name="password"
       required
@@ -98,13 +103,20 @@
     </div>
     <div *ngIf="passwordvar.errors?.['noNumeric']" class="alert alert-danger">
       Password must have at least one numeric character
-    </div>
+    </div> 
   </span>
-  <br />
+    <div>
+    <p-messages severity="info">
+      <ng-template pTemplate>
+        Passwords must be at least 8 characters long, include at least one lowercase character, an uppercase character, a numeric character, and a symbol.
+      </ng-template>
+  </p-messages>
+</div>
+      
   <span class="p-float-label">
     <p-password
       inputId="confirmpass"
-      [(ngModel)]="confirmpass"
+      [(ngModel)]="user.confirmPassword"
       [feedback]="false"
       name="confirmpass"
       required
@@ -126,4 +138,8 @@
     label="Submit"
     [disabled]="!signupForm.form.valid"
   ></p-button>
+  <br />
+  Already have an account?
+  <br />
+  <a pButton href='/login' style="text-decoration:none;" routerLinkActive="active" ariaCurrentWhenActive="page">Sign in instead</a>
 </form>
