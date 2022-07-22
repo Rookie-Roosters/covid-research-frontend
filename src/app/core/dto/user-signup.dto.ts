@@ -1,16 +1,15 @@
-export class UserCreateDto {   
+export class UserSignUpDto {   
     firstName: string;
     lastName: string;
     email: string;
     password: string;
-    "roles": [
-        "admin"
-      ];
+    confirmPassword: string;
 
     constructor() {
         this.firstName = ''
         this.lastName = ''
         this.email = ''
         this.password = ''
+        this.confirmPassword = ''
     }
 }

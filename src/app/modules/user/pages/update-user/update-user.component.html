@@ -1,0 +1,73 @@
+<h1>Update user</h1>
+<p-messages [hidden]=" error === '' " severity="error">
+  <ng-template pTemplate>
+    {{error}}
+  </ng-template>
+</p-messages>
+<form (ngSubmit)="onUpdate()" #signupForm="ngForm">
+  <span class="p-float-label">
+    <input
+      id="first-name-input"
+      type="text"
+      pInputText
+      [(ngModel)]="user.firstName"
+      name="firstname"
+      required
+      validName
+      maxlength="32"
+      #firstnamevar="ngModel"
+    />
+    <label for="first-name-input">First name</label>
+    <div
+      *ngIf="firstnamevar.errors?.['emptyName'] && firstnamevar.dirty"
+      class="alert alert-danger"
+    >
+      First name is required
+    </div>
+    <div
+      *ngIf="firstnamevar.errors?.['invalidName']"
+      class="alert alert-danger"
+    >
+      Please insert a valid name
+    </div>
+  </span>
+  <br />
+  <span class="p-float-label">
+    <input
+      id="last-name-input"
+      type="text"
+      pInputText
+      [(ngModel)]="user.lastName"
+      name="lastname"
+      required
+      validName
+      maxlength="32"
+      #lastnamevar="ngModel"
+    />
+    <label for="last-name-input">Last name</label>
+    <div
+      *ngIf="lastnamevar.errors?.['emptyName'] && lastnamevar.dirty"
+      class="alert alert-danger"
+    >
+      Last name is required
+    </div>
+    <div *ngIf="lastnamevar.errors?.['invalidName']" class="alert alert-danger">
+      Please insert a valid name
+    </div>
+  </span>
+  <br />
+  
+  <p-button
+    type="submit"
+    label="Update"
+    [disabled]="!signupForm.form.valid"
+  ></p-button>
+</form>
+
+<p-button
+class="p-button-danger"
+label="Delete"
+(onClick)="onDelete()"
+></p-button>
+<br />
+<a pButton href='user' style="text-decoration:none;" routerLinkActive="active" ariaCurrentWhenActive="page">Cancel</a>

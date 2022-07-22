@@ -6,6 +6,8 @@ import { HomeModule } from '@home/home.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ResearchModule } from '@research/research.module';
+import { AuthGuard } from '@core/guards/auth.guard';
+import { UserModule } from '@user/user.module';
 
 
 @NgModule({
@@ -15,8 +17,10 @@ import { ResearchModule } from '@research/research.module';
     AppRoutingModule,
     AuthenticationModule,
     HomeModule,
-    ResearchModule
+    ResearchModule,
+    UserModule,
   ],
+  providers: [AuthGuard],
   declarations: [RootComponent],
   bootstrap: [RootComponent],
 })

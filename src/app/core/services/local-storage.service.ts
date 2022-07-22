@@ -21,6 +21,17 @@ export class LocalStorageService {
     localStorage.setItem('user', JSON.stringify(user));
   }
 
+  public get id(): number{
+    return parseInt(localStorage.getItem('user.id')|| '');
+  }
+
+  public isLoggedIn(): boolean{
+    const tkn = localStorage.getItem('token');
+    if(tkn === '' || tkn === null)
+      return false;
+    else return true;
+  }
+
   public logOut(){
     localStorage.removeItem('token');
     localStorage.removeItem('user');

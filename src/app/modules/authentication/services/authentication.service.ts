@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { UserCreateDto } from '@core/dto/user-create.dto';
+import { UserSignUpDto } from '@core/dto/user-signup.dto';
 import { LoginUserDto } from '@core/dto/login-user.dto';
 import { Store } from '@core/models/store.model';
 import { Observable } from 'rxjs';
@@ -14,7 +14,7 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
 
-  signUp(user: UserCreateDto): Observable<Store>{
+  signUp(user: UserSignUpDto): Observable<Store>{
     return this.http.post<Store>(`${this.BASE_URL}/authentication/sign-up`, user);
   }
 

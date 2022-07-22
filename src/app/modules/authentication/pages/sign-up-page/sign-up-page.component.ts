@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserCreateDto } from '@core/dto/user-create.dto';
+import { UserSignUpDto } from '@core/dto/user-signup.dto';
 import { AuthenticationService } from '@authentication/services';
 import { LocalStorageService } from '@core/services/local-storage.service';
 import { Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-up-page.component.css'],
 })
 export class SignUpPageComponent implements OnInit {
-  user = new UserCreateDto();
+  user = new UserSignUpDto();
   error: string = '';
 
   constructor(private authenticationService: AuthenticationService,
