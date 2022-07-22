@@ -5,6 +5,8 @@ import { RootComponent } from '@core/components';
 import { HomeModule } from '@home/home.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { ResearchModule } from '@research/research.module';
+
 
 @NgModule({
   imports: [
@@ -13,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     AuthenticationModule,
     HomeModule,
+    ResearchModule
   ],
   declarations: [RootComponent],
   bootstrap: [RootComponent],
