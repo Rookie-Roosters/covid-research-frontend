@@ -26,7 +26,8 @@
       // Modules
       "@authentication/*": ["src/app/modules/authentication/*"],
       "@home/*": ["src/app/modules/home/*"],
-      "@users/*": ["src/app/modules/home/*"]
+      "@user/*": ["src/app/modules/user/*"],
+      "@research/*": ["src/app/modules/research/*"]
     }
   },
   "angularCompilerOptions": {
