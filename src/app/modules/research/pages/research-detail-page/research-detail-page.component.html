@@ -1,0 +1,82 @@
+<h1>{{research.publicTitle}}</h1>
+<p>{{research.views}} views</p>
+
+<h3>Main</h3>
+<p *ngIf="research.sourceRegister">Register: 
+    {{research.sourceRegister.value}}</p>
+<p>Last refreshed on: 
+    {{research.lastRefreshedOn}}</p>
+<p>Main ID: 
+    {{research.id}}</p>
+<p>Scientific title: 
+    {{research.scientificTitle}}</p>
+<p>Primary sponsor: 
+    {{research.primarySponsor}}</p>
+<p>Date of registration: 
+    {{research.dateRegistration}}</p>
+<p>Web address: 
+    {{research.webAddress}}</p>
+<p>Date of registration: 
+    {{research.dateRegistration}}</p>
+<p>Prospective Registration: 
+    {{research.retrospectiveFlag}}</p>
+<p *ngIf="research.targetSizes.length != 0">Target sample size: 
+    {{research.targetSizes[0].count}}</p>
+<p *ngIf="research.recruitmentStatus">Recruitment status: 
+    {{research.recruitmentStatus.value}}</p>
+<p *ngIf="research.studyType">Study type: 
+    {{research.studyType.value}} </p>
+<p>Study design: 
+    {{research.studyDesign}}</p>
+<p *ngIf="research.phase">Phase: 
+    {{research.phase.value}}</p>
+    
+<h3>Countries of recruitment</h3>
+<ng-container *ngIf="research.countries.length != 0">
+<p *ngFor="let item of research.countries; index as i;">
+    {{item.country.value}}</p>
+</ng-container>
+
+<h3>Contacts</h3>
+<p>Name: 
+    {{research.contactFirstname}} {{research.contactLastname}}</p>
+<p>Address: 
+    {{research.contactAddress}}</p>
+<p>Telephone: 
+    {{research.contactTel}}</p>
+<p>Email: 
+    {{research.contactEmail}}</p>
+<p>Affiliation: 
+    {{research.contactAffiliation}}</p>
+
+<h3>Key inclusion and exclusion criteria</h3>
+<p [innerHTML]="research.inclusionCriteria"></p>
+<p [innerHTML]="research.exclusionCriteria"></p>
+<p>Age minimum: 
+    {{research.inclusionAgeMin}} {{research.inclusionAgeMinType}}</p>
+<p>Age maximum: 
+    {{research.inclusionAgeMax}} {{research.inclusionAgeMaxType}}</p>
+<p>Gender: 
+    {{research.inclusionGender}}</p>
+
+<h3>Health Condition(s) or Problem(s) studied</h3>
+<p [innerHTML]="research.condition"></p>
+
+<h3>Intervention(s)</h3>
+<p [innerHTML]="research.intervention"></p>
+
+<h3>Primary Outcome</h3>
+<p [innerHTML]="research.primaryOutcome"></p>
+
+<h3>Secondary Outcome</h3>
+<p [innerHTML]="research.secondaryOutcome"></p>
+
+<h3>Results</h3>
+<p>Results available: 
+    {{research.results}}</p>
+<p>Date posted: 
+    {{research.resultsDatePosted}}</p>
+<p>Date completed: 
+    {{research.resultsDateCompleted}}</p>
+<p>Link: 
+    {{research.resultsUrlLink}}</p>

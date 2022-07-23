@@ -29,7 +29,9 @@
       "@dashboard/*": ["src/app/modules/dashboard/*"],
       "@home/*": ["src/app/modules/home/*"],
       "@users/*": ["src/app/modules/home/*"],
-      "@world-map/*": ["src/app/modules/world-map/*"]
+      "@world-map/*": ["src/app/modules/world-map/*"],
+      "@user/*": ["src/app/modules/user/*"],
+      "@research/*": ["src/app/modules/research/*"]
     }
   },
   "angularCompilerOptions": {
