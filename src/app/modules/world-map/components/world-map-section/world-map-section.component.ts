@@ -17,6 +17,53 @@ export class WorldMapSectionComponent implements OnInit {
   @ViewChild(GoogleMap, { static: false }) map!: GoogleMap;
   countries: CountryStats[] = [];
 
+  totalCases: boolean = false;
+  deaths = false;
+  vaccinations = false;
+  population = false;
+
+  toggleShow() {
+    this.totalCases = false;
+    this.deaths = false;
+    this.vaccinations = false;
+    this.population = false;
+  }
+
+  showTotalCases(checked: boolean) {
+    this.toggleShow();
+    if (checked) {
+      this.totalCases = true;
+      this.updateStats((stat) => stat.total_cases ?? 0);
+    } else this.updateStats((stat) => 0);
+  }
+
+  showDeaths(checked: boolean) {
+    this.toggleShow();
+    if (checked) {
+      this.deaths = true;
+      this.updateStats((stat) => stat.total_deaths ?? 0, 100000);
+    } else this.updateStats((stat) => 0);
+  }
+
+  showVaccinations(checked: boolean) {
+    this.toggleShow();
+    if (checked) {
+      this.vaccinations = true;
+      this.updateStats(
+        (stat) => Number(stat.total_vaccinations) ?? 0,
+        100000000
+      );
+    } else this.updateStats((stat) => 0);
+  }
+
+  showPopulation(checked: boolean) {
+    this.toggleShow();
+    if (checked) {
+      this.population = true;
+      this.updateStats((stat) => Number(stat.population) ?? 0, 100000000);
+    } else this.updateStats((stat) => 0);
+  }
+
   constructor(private indoor: IndoorDataService) {}
 
   async fetchApis() {

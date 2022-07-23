@@ -1,6 +1,6 @@
 <div class="h-screen w-screen flex flex-column">
-  <app-navbar (click)="toggleSidebar()"> </app-navbar>
-  <div class="w-full bg-green-500 flex-grow-1">
+  <app-navbar (onBookmarkOpen)="toggleBookmarks()"> </app-navbar>
+  <div id="homeContent" class="w-full bg-green-500 flex-grow-1">
     <div class="main-container h-full w-full">
       <app-world-map-section
         class="section h-full block"
@@ -14,5 +14,6 @@
       <app-news-section class="section"></app-news-section>
     </div>
   </div>
-  <app-researches-list [isVisible]="showSidebar"></app-researches-list>
+  <app-researches-list [isVisible]="showResearches"></app-researches-list>
+  <app-bookmark-panel [isVisible]="showBookmarks"></app-bookmark-panel>
 </div>
