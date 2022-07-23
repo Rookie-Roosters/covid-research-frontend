@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   apiServer: 'http://localhost:3000',
+  newsApiEndpoint: 'https://api.bing.microsoft.com/v7.0/news/search',
+  newsApiKey: 'd0803d4def314f4688425f63d4d2c907',
 };
 
 /*

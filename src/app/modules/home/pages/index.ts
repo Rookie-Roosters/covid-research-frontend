@@ -1,1 +1,1 @@
-export * from './world-map-page/world-map-page.component';
+export * from './home-page/home-page.component';

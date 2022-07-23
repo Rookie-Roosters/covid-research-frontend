@@ -1,0 +1,31 @@
+<div
+  class="p-3 h-16rem w-30rem bg-white text-900 border-round-lg border-400 border-1"
+  (click)="onNavigate(newsItem.url)"
+>
+  <div class="flex mb-3">
+    <div class="flex-column flex-grow-1 mr-3">
+      <div class="flex align-items-center mb-2">
+        <img
+          [src]="newsItem.provider[0].image.thumbnail.contentUrl"
+          class="w-3rem h-3rem mr-3 cover"
+        />
+        <div>
+          <h4>{{ newsItem.provider[0].name }}</h4>
+        </div>
+      </div>
+      <div>
+        <h3>
+          {{ newsItem.name }}
+        </h3>
+      </div>
+    </div>
+    <div>
+      <img
+        alt="Card"
+        [src]="newsItem.image.thumbnail.contentUrl"
+        class="w-8rem h-8rem border-round-lg"
+      />
+    </div>
+  </div>
+  <p>{{ newsItem.description }}</p>
+</div>
