@@ -8,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit {
   ngOnInit(): void {}
 
-  showSidebar = false;
-  toggleSidebar() {
-    this.showSidebar = !this.showSidebar;
+  showResearches = false;
+  showBookmarks = false;
+
+  toggleResearches() {
+    this.showResearches = !this.showResearches;
+  }
+
+  toggleBookmarks() {
+    this.showBookmarks = !this.showBookmarks;
   }
 }

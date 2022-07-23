@@ -1,39 +1,40 @@
-<div class="h-full bg-red-500">
+<div class="h-full bg-red-500 relative">
   <google-map [options]="options" width="100%" height="100%"> </google-map>
-  <!-- <p-gmap
-    #gugul
-    [options]="options"
-    [style]="{ height: '100%', width: '100%' }"
-  ></p-gmap> -->
+  <div
+    class="absolute left-50 p-4 surface-900 border-round-3xl flex"
+    style="transform: translateX(-50%); bottom: 20%"
+  >
+    <p-toggleButton
+      [(ngModel)]="totalCases"
+      onLabel="Total cases"
+      offLabel="Total cases"
+      (onChange)="showTotalCases($event.checked)"
+    ></p-toggleButton>
+
+    <p-toggleButton
+      [(ngModel)]="deaths"
+      onLabel="Total deaths"
+      offLabel="Total cases"
+      (onChange)="showDeaths($event.checked)"
+    ></p-toggleButton>
+
+    <p-toggleButton
+      [(ngModel)]="vaccinations"
+      onLabel="Total vaccinations"
+      offLabel="Total vaccinations"
+      (onChange)="showVaccinations($event.checked)"
+    ></p-toggleButton>
+
+    <p-toggleButton
+      [(ngModel)]="population"
+      onLabel="Total population"
+      offLabel="Total population"
+      (onChange)="showPopulation($event.checked)"
+    ></p-toggleButton>
+  </div>
 </div>
 
-<!-- 
-<div class="container">
-    <div class="section h-screen">
-      <p-gmap
-        [options]="options"
-        [style]="{ height: '100%', width: '100%' }"
-      ></p-gmap>
-    </div>
-    <div class="section" [style]="{ height: '100vh', marginTop: '-20rem' }">
-      <app-news-section
-        [style]="{ color: 'black !important' }"
-      ></app-news-section>
-      <div class="h-full bg-red-500">
-        <h1>grafiquitas</h1>
-      </div>
-    </div>
-    <div class="bg-yellow-500 section h-30rem">
-      <app-news-section></app-news-section>
-      <!- <div class="carousel">
-        <p-card *ngFor="let card of cards" class="carousel-item p-5 mx-5">
-          <ng-template pTemplate="header">
-            {{ card.text }}
-          </ng-template>
-        </p-card>
-      </div> ->
-    </div>
-    <div class="bg-red-500 section h-30rem">3</div>
-    <div class="bg-green-500 section h-30rem">4</div>
-    <div class="bg-blue-500 section h-30rem">5</div>
-  </div> -->
+<!-- totalCases = false;
+  deaths = false;
+  vaccinations = false;
+  population = false; -->
