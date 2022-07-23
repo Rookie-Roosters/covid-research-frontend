@@ -10,6 +10,8 @@ import { AuthGuard } from '@core/guards/auth.guard';
 import { UserModule } from '@user/user.module';
 import { ChartModule } from 'primeng/chart';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { FooterComponent } from './core/components/footer/footer.component';
+import {ImageModule} from 'primeng/image';
 
 
 @NgModule({
@@ -23,9 +25,10 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
     UserModule,
     DashboardModule,
     ChartModule,
+    ImageModule
   ],
   providers: [AuthGuard],
-  declarations: [RootComponent],
+  declarations: [RootComponent, FooterComponent],
   bootstrap: [RootComponent],
 })
 export class AppModule {}

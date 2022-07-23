@@ -20,8 +20,8 @@ export class ChartsComponent implements OnInit {
   ngOnInit(): void {
     this.chartService.getStats(this.query).subscribe({
       next: (v: any) => {
-        console.log(v)
-        this.data = v;
+        this.data = v.data;
+        console.log(this.data)
         this.createDatasets();
       },
       error: (e: any) => {console.log(e) },
