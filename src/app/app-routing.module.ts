@@ -5,6 +5,7 @@ import { AuthGuard } from '@core/guards/auth.guard';
 import { WorldMapPageComponent } from '@home/pages';
 import { ResearchDetailPageComponent } from '@research/pages/research-detail-page/research-detail-page.component';
 import { BookmarksComponent, ProfileComponent, UpdateUserComponent } from '@user/pages';
+import { ChartsComponent } from './modules/dashboard/charts/charts.component';
 
 const routes: Routes = [
   { path: '', component: WorldMapPageComponent },
@@ -13,8 +14,9 @@ const routes: Routes = [
   { path: 'research/:id', component: ResearchDetailPageComponent },
   { path: 'user', component: ProfileComponent, canActivate: [ AuthGuard ]},
   { path: 'user/update', component: UpdateUserComponent, canActivate: [ AuthGuard ]},
-  { path: 'user/bookmarks', component: BookmarksComponent, canActivate: [ AuthGuard ]}
-  
+  { path: 'user/bookmarks', component: BookmarksComponent, canActivate: [ AuthGuard ]},
+  { path: 'charts', component: ChartsComponent}
+
 ];
 
 @NgModule({

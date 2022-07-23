@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ResearchModule } from '@research/research.module';
 import { AuthGuard } from '@core/guards/auth.guard';
 import { UserModule } from '@user/user.module';
+import { ChartModule } from 'primeng/chart';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { UserModule } from '@user/user.module';
     HomeModule,
     ResearchModule,
     UserModule,
+    DashboardModule,
+    ChartModule,
   ],
   providers: [AuthGuard],
   declarations: [RootComponent],
