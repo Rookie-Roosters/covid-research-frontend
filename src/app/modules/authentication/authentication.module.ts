@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';
-import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
 import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
@@ -9,11 +7,23 @@ import { PasswordModule } from 'primeng/password';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { NameValidatorDirective } from '@shared/directives';
-import { ConfirmPasswordDirective, PasswordValidatorDirective } from '@shared/directives';
-
+import {
+  ConfirmPasswordDirective,
+  PasswordValidatorDirective,
+} from '@shared/directives';
+import { LogInComponent, SignUpComponent } from './components';
+import { AuthenticationPageComponent } from './pages';
+import { AuthenticationRoutingModule } from './authentication-routing.module';
 
 @NgModule({
-  declarations: [LogInPageComponent, SignUpPageComponent, NameValidatorDirective, PasswordValidatorDirective, ConfirmPasswordDirective],
+  declarations: [
+    NameValidatorDirective,
+    PasswordValidatorDirective,
+    ConfirmPasswordDirective,
+    LogInComponent,
+    SignUpComponent,
+    AuthenticationPageComponent,
+  ],
   imports: [
     CommonModule,
     ButtonModule,
@@ -22,6 +32,7 @@ import { ConfirmPasswordDirective, PasswordValidatorDirective } from '@shared/di
     FormsModule,
     InputTextModule,
     PasswordModule,
+    AuthenticationRoutingModule,
   ],
 })
 export class AuthenticationModule {}

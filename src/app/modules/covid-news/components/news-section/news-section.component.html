@@ -1,0 +1,15 @@
+<div class="w-full surface-900 py-5">
+  <div class="flex align-items-center responsive-padding my-3 text-white">
+    <i class="uil uil-newspaper text-7xl mr-3"></i>
+    <h1 class="text-5xl">Latest COVID-19 News</h1>
+  </div>
+
+  <div class="carousel">
+    <app-news-card
+      *ngFor="let newsItem of newsList"
+      [newsItem]="newsItem"
+      class="mr-3"
+    >
+    </app-news-card>
+  </div>
+</div>

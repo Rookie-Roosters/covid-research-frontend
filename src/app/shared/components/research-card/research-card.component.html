@@ -1,0 +1,27 @@
+<div class="bg-white border-1 h-16rem w-28rem border-400 border-round-lg p-3">
+  <div class="flex flex-column">
+    <div class="flex align-items-center text-500 text-xl">
+      <i class="uil uil-calendar-alt mr-2"></i
+      ><span>{{ researchCardItem.lastRefreshedOn | date }}</span>
+      <div class="flex-grow-1"></div>
+      <div class="text-blue-500 text-2xl">
+        <i class="uil uil-eye mr-2"></i
+        ><span>{{ researchCardItem.views }}</span>
+      </div>
+    </div>
+    <div class="flex align-items-center text-500 text-xl mt-2">
+      <i class="uil uil-flask mr-2"></i
+      ><span>{{ researchCardItem.primarySponsor }}</span>
+    </div>
+    <div class="my-3">
+      <h3>{{ researchCardItem.publicTitle }}</h3>
+    </div>
+    <div class="flex-grow-1"></div>
+
+    <div>
+      <a [href]="researchCardItem.webAddress">
+        {{ researchCardItem.webAddress }}
+      </a>
+    </div>
+  </div>
+</div>

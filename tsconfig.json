@@ -25,8 +25,11 @@
       "@shared/*": ["src/app/shared/*"],
       // Modules
       "@authentication/*": ["src/app/modules/authentication/*"],
+      "@covid-news/*": ["src/app/modules/covid-news/*"],
+      "@dashboard/*": ["src/app/modules/dashboard/*"],
       "@home/*": ["src/app/modules/home/*"],
-      "@users/*": ["src/app/modules/home/*"]
+      "@users/*": ["src/app/modules/home/*"],
+      "@world-map/*": ["src/app/modules/world-map/*"]
     }
   },
   "angularCompilerOptions": {
