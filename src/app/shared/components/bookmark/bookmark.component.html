@@ -1,0 +1,9 @@
+<div [ngStyle]="{'background-color': bookmark.color}">
+<h2>{{bookmark.name}}</h2>
+
+<ng-container *ngIf="bookmark.researches.length!==0">
+    <ng-container *ngFor="let item of bookmark.researches; index as i;">
+       <app-research-abstract [research]="item"></app-research-abstract> 
+    </ng-container>
+</ng-container>
+</div>

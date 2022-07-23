@@ -33,8 +33,9 @@ export class LocalStorageService {
   }
 
   public logOut(){
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
+    console.log('logged out')
+    localStorage.setItem('token', '');
+    localStorage.setItem('user', '');
   }
 
 }

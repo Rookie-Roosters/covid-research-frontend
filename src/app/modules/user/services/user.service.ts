@@ -23,6 +23,6 @@ export class UserService {
   }
 
   deleteUser(id: number){
-    return this.http.delete<User>(`${this.BASE_URL}/users/${id}`);
+    return this.http.delete(`${this.BASE_URL}/users/${id}`);
   }
 }

@@ -1,1 +1,11 @@
-<p>bookmarks works!</p>
+<h1>Your bookmarks</h1>
+<br />
+
+<h3 [hidden]="bookmarks.length!==0">You haven't created any bookmarks yet</h3>
+<app-create-bookmark></app-create-bookmark>
+<ng-container *ngIf="bookmarks.length!==0">
+    <ng-container *ngFor="let item of bookmarks; index as i;">
+       <app-bookmark [bookmark]="item"></app-bookmark> 
+    </ng-container>
+    
+</ng-container>

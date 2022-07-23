@@ -9,6 +9,7 @@ import { PasswordModule } from 'primeng/password';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { BookmarksComponent } from './pages/bookmarks/bookmarks.component';
+import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { BookmarksComponent } from './pages/bookmarks/bookmarks.component';
     FormsModule,
     InputTextModule,
     PasswordModule,
+    SharedModule
   ],
 })
 export class UserModule { }

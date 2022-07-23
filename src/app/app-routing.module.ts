@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'user', component: ProfileComponent, canActivate: [ AuthGuard ]},
   { path: 'user/update', component: UpdateUserComponent, canActivate: [ AuthGuard ]},
   { path: 'user/bookmarks', component: BookmarksComponent, canActivate: [ AuthGuard ]}
+  
 ];
 
 @NgModule({
